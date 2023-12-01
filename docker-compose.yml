@@ -38,4 +38,10 @@ services:
     - DOCKER_TLS_CERTDIR=/certs
     networks:
     - jenkins
+    privileged: true
+    hostname: docker
+    restart: always
+    volumes:
+    - jenkins-docker-certs:/certs/client
+    - jenkins-data:/var/jenkins_home
 
